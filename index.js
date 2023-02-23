@@ -4,12 +4,14 @@ const port = process.env.PORT || 7020
 const mongoose = require('mongoose')
 mongoose.set("strictQuery", true)
 require('dotenv').config()
+const cors = require('cors')
 
 const teamRouter = require('./routes/teamRouter')
 
 
-
+app.use(cors())
 app.use(express())
+
 
 app.use(teamRouter)
 
